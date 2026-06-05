@@ -8,8 +8,8 @@ from flask import Flask, request, send_file, jsonify, abort
  
 # configuration
  
-ASSETS_DIR = Path(__file__).parent / "assets"
-CACHE_TTL_SECONDS = 300          # Cache entries expire after 5 minutes
+ASSETS_DIR = Path(__file__).parent / #assets"
+CACHE_TTL_SECONDS = 300          # cache entries expire after 5 minutes
 MAX_ASSET_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB upload limit
  
 app = Flask(__name__)
@@ -22,7 +22,7 @@ _cache_lock = threading.Lock()
  
  
 def _cache_get(asset_id: str):
-    """Return cached (data, mimetype) if present and not expired, else None."""
+ #return cached data if present and not expired
     with _cache_lock:
         entry = _cache.get(asset_id)
         if entry is None:
